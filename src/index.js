@@ -11,7 +11,8 @@ app.get("/", async (req, res) => {
 
 // localhost:4000/addtodo
 app.get("/addtodo", async (req, res) => {
-  await insertTodo({ message: "via api" });
+  let message = req.query.message || "hardcoded message";
+  await insertTodo({ message: message });
   res.json({ message: "Success" });
 });
 
