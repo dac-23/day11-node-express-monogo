@@ -11,4 +11,18 @@ async function insertTodo() {
   await client.close();
 }
 
-insertTodo();
+async function readAllTodo() {
+  const uri = "mongodb://localhost:27017";
+  const client = new MongoClient(uri);
+
+  const db = client.db("project");
+  const todo_collection = db.collection("todo");
+
+  let list = await todo_collection.find().toArray();
+  console.log(list);
+
+  await client.close();
+}
+
+// insertTodo();
+readAllTodo();
