@@ -16,4 +16,9 @@ app.get("/addtodo", async (req, res) => {
   res.json({ message: "Success" });
 });
 
+// localhost:4000/addtodo
+app.post("/addtodo", (req, res) => {
+  res.json({ message: "I AM POST API" });
+});
+
 app.listen(4000);
