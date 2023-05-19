@@ -1,3 +1,4 @@
-import { readAllTodo } from "./db_todo.js";
+import { insertTodo } from "./db_todo.js";
 
-readAllTodo();
+let data = { message: "Hiiiii" };
+insertTodo(data);
