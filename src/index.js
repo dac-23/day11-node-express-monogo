@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 import { readAllTodo, insertTodo } from "./db_todo.js";
 
 const app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cors());
 
 // localhost:4000/
 app.get("/", async (req, res) => {
