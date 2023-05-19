@@ -1,4 +1,3 @@
-import { insertTodo } from "./db_todo.js";
-
-let data = { message: "Hiiiii" };
-insertTodo(data);
+import express from "express";
+const app = express();
+app.listen(4000);
