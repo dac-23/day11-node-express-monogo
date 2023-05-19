@@ -1,9 +1,11 @@
 import express from "express";
+import { readAllTodo } from "./db_todo.js";
+
 const app = express();
 
-// localhost:4000/
-app.get("/", (req, res) => {
-  res.json({ message: "hello" });
+app.get("/", async (req, res) => {
+  let list = await readAllTodo();
+  res.json(list);
 });
 
 app.listen(4000);
