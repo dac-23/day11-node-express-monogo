@@ -11,3 +11,4 @@ let post = {
 
 let { body, title } = post;
 console.log(title);
+console.log(body);
